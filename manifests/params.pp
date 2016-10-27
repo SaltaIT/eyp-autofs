@@ -1,5 +1,7 @@
 class autofs::params {
 
+  $package_name='autofs'
+
   case $::osfamily
   {
     'redhat':

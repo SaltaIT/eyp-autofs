@@ -15,7 +15,10 @@ class autofs::service inherits autofs {
   {
     if($autofs::manage_service)
     {
-      #service or exec here
+      service { 'autofs':
+        ensure => $autofs::service_ensure,
+        enable => $autofs::service_enable,
+      }
     }
   }
 }
