@@ -12,6 +12,7 @@ class autofs(
                           ) inherits autofs::params{
 
   class { '::autofs::install': } ->
+  class { '::autofs::config': } ~>
   class { '::autofs::service': } ->
   Class['::autofs']
 
