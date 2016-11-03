@@ -7,4 +7,13 @@ class autofs::config inherits autofs {
     mode    => '0644',
     content => template("${module_name}/autofs.erb"),
   }
+
+  file { '/etc/auto.master':
+    ensure  => 'present',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template("${module_name}/automaster.erb"),
+  }
+
 }
